@@ -1,0 +1,1000 @@
+ 1129  cd..
+ 1130  cd ..
+ 1131  ls
+ 1132  cd ..
+ 1133  ls
+ 1134  cd common/
+ 1135  ls
+ 1136  cd inc/
+ 1137  ls
+ 1138  cat helper_functions.h 
+ 1139  cd ..
+ 1140  cd 5_Simulations/particles/
+ 1141  cat particleSystem.cuh 
+ 1142  subl Makefile 
+ 1143  make
+ 1144  cat particleSystem_cuda.cu 
+ 1145  subl particleSystem_cuda.cu 
+ 1146  subl particles.cpp 
+ 1147  subl particleSystem.cpp 
+ 1148  subl particles.cpp 
+ 1149  subl particleSystem.cpp 
+ 1150  subl particleSystem.h
+ 1151  subl particles_kernel_impl.cuh 
+ 1152  subl particleSystem.cpp 
+ 1153  ls
+ 1154  subl render_particles.h
+ 1155  subl render_particles.cpp 
+ 1156  subl shaders.h
+ 1157  subl shaders.cpp 
+ 1158  ls
+ 1159  make
+ 1160  sudo make
+ 1161  ls
+ 1162  ./particles 
+ 1163  ls ./data/
+ 1164  cat NsightEclipse.xml 
+ 1165  subl particleSystem_cuda.cu 
+ 1166  subl particles.cpp 
+ 1167  subl particleSystem_cuda.cu 
+ 1168  subl particleSystem.cpp 
+ 1169  sbul particleSystem.h
+ 1170  subl particleSystem.h
+ 1171  subl particles.cpp 
+ 1172  cd /opt/
+ 1173  ls
+ 1174  cd acclab_b2/
+ 1175  ls
+ 1176  ./matlab_with_labca.sh 
+ 1177  cd /opt/
+ 1178  ls
+ 1179  cd acclab_b2/
+ 1180  ls
+ 1181  cd machine/
+ 1182  ls
+ 1183  cd BESSYII/
+ 1184  ;s
+ 1185  ls
+ 1186  cd
+ 1187  cd acclab/acclab/
+ 1188  ls
+ 1189  cd data/
+ 1190  ls
+ 1191  cd StorageRingData/
+ 1192  ls
+ 1193  cd Multibunch/
+ 1194  ls
+ 1195  cd LOCO/
+ 1196  ls
+ 1197  cd 2017-09-18
+ 1198  ls
+ 1199  cd 12-20-01/
+ 1200  ls
+ 1201  cd Cprograms/ls
+ 1202  cd Cprograms/
+ 1203  ls
+ 1204  mkdir opengl
+ 1205  cd opengl/
+ 1206  subl example1.cpp
+ 1207  g++ example1.cpp 
+ 1208  cp -r /Cprograms/cuda/gitcuda/CudaParticleTracking/common/inc/GL .
+ 1209  cp -r home/tmerten/Cprograms/cuda/gitcuda/CudaParticleTracking/common/inc/GL .
+ 1210  cp -r /home/tmerten/Cprograms/cuda/gitcuda/CudaParticleTracking/common/inc/GL .
+ 1211  ls
+ 1212  g++ example1.cpp 
+ 1213  ld
+ 1214  ls
+ 1215  g++ -I./GL example1.cpp 
+ 1216  g++ -I./ example1.cpp 
+ 1217  sudo apt-get install cmake make g++ libx11-dev libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxrandr-dev libxext-dev libxcursor-dev libxinerama-dev libxi-dev
+ 1218  cd ..
+ 1219  ls
+ 1220  cd OpenGLTutorials/
+ 1221  ls
+ 1222  mkdir build
+ 1223  cd build
+ 1224  cmake
+ 1225  cd ..
+ 1226  ls
+ 1227  cd ogl-master/
+ 1228  ls
+ 1229  cmake
+ 1230  make all
+ 1231  CMake
+ 1232  cmake
+ 1233  cd ..
+ 1234  ls
+ 1235  cd buil
+ 1236  cd build/
+ 1237  ls
+ 1238  cmake ..
+ 1239  ls
+ 1240  cd ..
+ 1241  cd ogl-master/
+ 1242  ls
+ 1243  mkdir build
+ 1244  cd build 
+ 1245  cmake ..
+ 1246  ls
+ 1247  make all
+ 1248  cd ..
+ 1249  ls
+ 1250  cd playground/
+ 1251  ./playground 
+ 1252  cd ..
+ 1253  cd tutorial01_first_window/
+ 1254  ls
+ 1255  ./tutorial01_first_window 
+ 1256  cd ..
+ 1257  cd tutorial02_red_triangle/
+ 1258  ls
+ 1259  ./tutorial02_red_triangle 
+ 1260  cd /usr/local/cuda-9.0/samples/common/inc/
+ 1261  ls
+ 1262  cat helper_gl.h 
+ 1263  ls
+ 1264  sudo apt install ocl-icd-libopencl1
+ 1265  sudo apt install opencl-headers
+ 1266  sudo apt install clinfo
+ 1267  sudo apt install ocl-icd-opencl-dev
+ 1268  suod apt install beignet
+ 1269  sudo apt install beignet
+ 1270  clinfo
+ 1271  cd Cprograms/
+ 1272  ks
+ 1273  ls
+ 1274  mkdir opencl
+ 1275  cd open
+ 1276  cd opencl/
+ 1277  ls
+ 1278  nano test.cl
+ 1279  ioc64 -input=test.cl -asm
+ 1280  subl first.cl
+ 1281  g++ first.cl 
+ 1282  mv first.cl first.cpp
+ 1283  cat first.cpp 
+ 1284  g++ first.cpp 
+ 1285  mv first.cl first.cpp
+ 1286  g++ first.cpp 
+ 1287  subl first.cpp 
+ 1288  g++ first.cpp 
+ 1289  g++ -o first first.cpp -lOpenCl
+ 1290  nano hello.cl
+ 1291  nano hello.c
+ 1292  gcc -I /path-to-NVIDIA/OpenCL/common/inc -L /path-to-NVIDIA/OpenCL/common/lib/Linux64 -o hello hello.c -lOpenCL
+ 1293  ls
+ 1294  ./hello 
+ 1295  cd Cprograms/
+ 1296  cd opencl/
+ 1297  ls
+ 1298  gcc -I /path-to-NVIDIA/OpenCL/common/inc -L /path-to-NVIDIA/OpenCL/common/lib/Linux64 -o hello hello.c -lOpenCL
+ 1299  ./hello 
+ 1300  sudo apt-get install ocl-icd-opencl-dev
+ 1301  sudo apt-get remove beignet
+ 1302  gcc -I /path-to-NVIDIA/OpenCL/common/inc -L /path-to-NVIDIA/OpenCL/common/lib/Linux64 -o hello hello.c -lOpenCL
+ 1303  ./hello 
+ 1304  sudo apt-get purge --auto-remove beignet
+ 1305  sudo apt-get purge beignet
+ 1306  gcc -I /path-to-NVIDIA/OpenCL/common/inc -L /path-to-NVIDIA/OpenCL/common/lib/Linux64 -o hello hello.c -lOpenCL
+ 1307  ./hello 
+ 1308  gcc -I /path-to-NVIDIA/OpenCL/common/inc -L /path-to-NVIDIA/OpenCL/common/lib/Linux64 -o hello hello.c -lOpenCL
+ 1309  ./hello 
+ 1310  gcc -o  hello hello.c -lOpenCl
+ 1311  gcc -o  hello hello.c -lOpenCL
+ 1312  ./hello 
+ 1313  subl first.cpp 
+ 1314  nano makefile
+ 1315  make
+ 1316  ls
+ 1317  ll
+ 1318  ./hello 
+ 1319  make
+ 1320  ./hello 
+ 1321  sudo apt install beignet
+ 1322  cd Downloads/Benchmarks/
+ 1323  ls
+ 1324  python kernels.py 
+ 1325  conda install pyopencl
+ 1326  conda install -c conda-forge pyopencl
+ 1327  python kernels.py 
+ 1328  python benchmark.py 
+ 1329  python kernels.py 
+ 1330  sudo usermod -aG video tmerten
+ 1331  sudo python kernels.py 
+ 1332  which python
+ 1333  python
+ 1334  ls
+ 1335  sudo python kernels.py 
+ 1336  python
+ 1337  cd Downloads/
+ 1338  cd Cprograms/
+ 1339  ls
+ 1340  cd opencl/
+ 1341  ls
+ 1342  nano min.cl
+ 1343  cat makefile 
+ 1344  g++ -o min min.cl -lOpenCL
+ 1345  mv min.cl min.cpp
+ 1346  g++ -o min min.cpp -lOpenCL
+ 1347  ls
+ 1348  ./min
+ 1349  nvidia-settings
+ 1350  ls /usr/include/CL/
+ 1351  sudo apt-get install nvidia-prime
+ 1352  sudo apt-get install nvidia-modprobe
+ 1353  sudo ln -s /usr/include/nvidia-387/GL /usr/local/include
+ 1354  sudo len -s /usr/lib/x86_64-linux-gnu/libOpenCL.so.1 /usr/local/lib/libOpenCl.so
+ 1355  sudo ln -s /usr/lib/x86_64-linux-gnu/libOpenCL.so.1 /usr/local/lib/libOpenCl.so
+ 1356  ls
+ 1357  ./min
+ 1358  sudo ./min 
+ 1359  ls
+ 1360  g++ -o min min.cpp -lOpenCL
+ 1361  clinfo
+ 1362  ls
+ 1363  lspci |grep VGA
+ 1364  lspci -v
+ 1365  lspci -vnnn | perl -lne 'print if /^\d+\:.+(\[\S+\:\S+\])/' | grep VGA
+ 1366  glxinfo|egrep "OpenGL vendor|OpenGL renderer*"
+ 1367  cd Cprograms/
+ 1368  ls
+ 1369  cd opencl
+ 1370  ls
+ 1371  sudo ./hello 
+ 1372  ls
+ 1373  cd nvvp_workspace/
+ 1374  ls
+ 1375  cd RemoteSystemsTempFiles/
+ 1376  ls
+ 1377  cd ..
+ 1378  cd
+ 1379  cd cuda-workspace/
+ 1380  ls
+ 1381  cd ste/
+ 1382  ls
+ 1383  cd src
+ 1384  ls
+ 1385  nvcc -ccbin clang-3.8 -lstdc++ ste.cu
+ 1386  ls
+ 1387  ./a.out 
+ 1388  ls
+ 1389  subl bunch.h 
+ 1390  subl simParameters.cuh
+ 1391  subl bunch.cpp
+ 1392  ls
+ 1393  cd LATEX/
+ 1394  ls
+ 1395  open LatticeDesign.pdf
+ 1396  xdg-open LatticeDesign.pdf
+ 1397  cd
+ 1398  cd Downloads/
+ 1399  ls
+ 1400  ls bes*
+ 1401  gedit bessyIIatdeck.m
+ 1402  nano bessyIIatdeck.m
+ 1403  nano bessyIIinit.m
+ 1404  cd
+ 1405  cd PycharmProjects/
+ 1406  ls
+ 1407  cd LatticeTools/
+ 1408  ls
+ 1409  cd Tools/
+ 1410  ls
+ 1411  cd ..
+ 1412  ls
+ 1413  cd Tools/
+ 1414  ls
+ 1415  nano GenerateResponseMatrix.py 
+ 1416  cd ..
+ 1417  cd PyMAD/
+ 1418  ls
+ 1419  cd datafiles/
+ 1420  ls
+ 1421  cd ..
+ 1422  ls
+ 1423  cd ..
+ 1424  ls
+ 1425  cd PythonML/
+ 1426  ls
+ 1427  cd MatlabToPython/
+ 1428  ls
+ 1429  ll
+ 1430  cat ExtractStrengts.py 
+ 1431  ll
+ 1432  cat ATring.py 
+ 1433  ls
+ 1434  cd ..
+ 1435  ls
+ 1436  cd ..
+ 1437  ls
+ 1438  cd Devices/
+ 1439  ls
+ 1440  cd Devices
+ 1441  ls
+ 1442  cat Devices.py 
+ 1443  cd 
+ 1444  cd devices/
+ 1445  ls
+ 1446  cat ao_corr.csv 
+ 1447  ipython
+ 1448  jupyter notebook
+ 1449  grep HS4 ao_corr.csv
+ 1450  grep HS4P2 ao_corr.csv
+ 1451  grep HS4P2T2 ao_corr.csv
+ 1452  ipython
+ 1453  exit
+ 1454  cd /media/tmerten/datadisk/
+ 1455  ls
+ 1456  cd hzb/
+ 1457  ls
+ 1458  cp -r /home/tmerten/JNotebooks/ .
+ 1459  fdisk -l
+ 1460  sudo fdisk -l
+ 1461  cd ..
+ 1462  ;s
+ 1463  ls
+ 1464  sudo moutn -t hfsplus -o force, rw /dev/sdc2 /media/tmerten/dt
+ 1465  sudo mount -t hfsplus -o force, rw /dev/sdc2 /media/tmerten/dt
+ 1466  ls
+ 1467  sudo fsck.hfsplus /dev/sdc2
+ 1468  sudo fdisk -l
+ 1469  sudo fsck.hfsplus /dev/sde2
+ 1470  ls
+ 1471  cd datadisk/
+ 1472  ls
+ 1473  ll
+ 1474  cp -r /home/tmerten/JNotebooks/ .
+ 1475  ls
+ 1476  cd 
+ 1477  ls /media/tmerten/
+ 1478  sudo mkdir /media/tmerten/dt
+ 1479  sudo mount -t hfsplus -o force,rw /dev/sde2 /media/tmerten/dt/
+ 1480  cd /media/tmerten/dt/
+ 1481  l
+ 1482  cd hzb/
+ 1483  ls
+ 1484  cp -r /home/tmerten/JNotebooks/ .
+ 1485  ls
+ 1486  cd
+ 1487  cd scripts/
+ 1488  ls
+ 1489  nano mountdatadisk.sh
+ 1490  cd cuda-workspace/ste/src/
+ 1491  ls
+ 1492  ./a.out 
+ 1493  ls
+ 1494  ll
+ 1495  cat rands_bigaussian_out.txt 
+ 1496  ls
+ 1497  make
+ 1498  nano random.h 
+ 1499  ll
+ 1500  ./a.out 
+ 1501  ll
+ 1502  cd /media/tmerten/68D4-F9FC/
+ 1503  ls
+ 1504  cd hzb/
+ 1505  ls
+ 1506  cp /home/tmerten/LATEX/Presentations/cd 2017-11-13-POF/
+ 1507  ls
+ 1508  cd 2017-11-13-POF/
+ 1509  ls
+ 1510  ll
+ 1511  cp /home/tmerten/LATEX/Presentations/2017-11-13-POF/POF_version4.pdf .
+ 1512  python
+ 1513  ipconfig -a
+ 1514  ifconfig -a
+ 1515  sudo apt-get install libboost-all-dev
+ 1516  cd scripts/
+ 1517  ls
+ 1518  bash mountdatadisk.sh 
+ 1519  plist
+ 1520  ldisk
+ 1521  fdisk
+ 1522  fdisk -l
+ 1523  sudo fdisk -l
+ 1524  cat mountdatadisk.sh 
+ 1525  cd
+ 1526  cd /media/tmerten/dt/
+ 1527  ls
+ 1528  cd hzb
+ 1529  ls
+ 1530  cp -r /home/tmerten/cuda-workspace/ .
+ 1531  ls
+ 1532  cd cuda-workspace/
+ 1533  ls
+ 1534  cd ste/
+ 1535  ls
+ 1536  cd src/
+ 1537  ls
+ 1538  time ./a.out 
+ 1539  ls
+ 1540  ll
+ 1541  python
+ 1542  cd mad
+ 1543  ls
+ 1544  cd 2018-01-03/
+ 1545  cd madin/
+ 1546  ls
+ 1547  nano madin.madx 
+ 1548  madx-dev madin.madx 
+ 1549  jupyter notebook
+ 1550  python
+ 1551  cd /media/tmerten/dt/
+ 1552  ls
+ 1553  cd hzb
+ 1554  ls
+ 1555  scp -r /home/tmerten/cuda-workspace/ .
+ 1556  ll
+ 1557  cd cuda-workspace/
+ 1558  ll
+ 1559  cd ste/
+ 1560  ll
+ 1561  cd src/
+ 1562  ll
+ 1563  cd
+ 1564  python
+ 1565  cd /media/tmerten/dt/
+ 1566  cd hzb/
+ 1567  ls
+ 1568  cp -r /home/tmerten/cuda-workspace/ .
+ 1569  cd cuda-workspace/
+ 1570  ls
+ 1571  cd ste/
+ 1572  ll
+ 1573  cd src/
+ 1574  ll
+ 1575  uname -a
+ 1576  sudo cat /sys/kernel/debug/vgaswitcheroo/switch
+ 1577  nano /etc/default/grub 
+ 1578  sudo /etc/default/gr
+ 1579  sudo /etc/default/grub
+ 1580  sudo nano /etc/default/grub
+ 1581  clinfo
+ 1582  which beignet
+ 1583  beignet --version
+ 1584  sudo apt install beignet
+ 1585  cd Cprograms/
+ 1586  ls
+ 1587  cd cuda/
+ 1588  ls
+ 1589  cd gitcuda/
+ 1590  ls
+ 1591  cd CudaParticleTracking/
+ 1592  ls
+ 1593  make
+ 1594  ./simulation 
+ 1595  ll
+ 1596  cd ..
+ 1597  ls
+ 1598  cd ..
+ 1599  ls
+ 1600  cd 
+ 1601  cd Cprograms/
+ 1602  ls
+ 1603  cd Examples/
+ 1604  ls
+ 1605  cd ..
+ 1606  cd opengl/
+ 1607  ls
+ 1608  cd ..
+ 1609  cd Examples/
+ 1610  ls
+ 1611  cd ..
+ 1612  cd OpenGLTutorials/
+ 1613  ls
+ 1614  ogl-master/
+ 1615  ls
+ 1616  cd ogl-master/
+ 1617  ls
+ 1618  cd ..
+ 1619  ls
+ 1620  cd cuda/
+ 1621  ls
+ 1622  ls /usr/local/cuda-9.0/samples/
+ 1623  cd /usr/local/cuda-9.0/samples/
+ 1624  ls
+ 1625  cd 0_Simple/
+ 1626  ls
+ 1627  cd -
+ 1628  cd /home/tmerten/Cprograms/
+ 1629  ls
+ 1630  mkdir thrust
+ 1631  cd thrust/
+ 1632  cd mad
+ 1633  cd 2017-12-18/
+ 1634  cd madin/
+ 1635  ls
+ 1636  madx-dev madin.madx 
+ 1637  ll /home/tmerten/mad/sequences/
+ 1638  madx-dev madin.madx 
+ 1639  ls
+ 1640  ll
+ 1641  madx-dev madin.madx 
+ 1642  nano general.sh
+ 1643  ls
+ 1644  nano scripts_grep.sh 
+ 1645  nano scripts_awk 
+ 1646  conda install -c anaconda graphviz
+ 1647  cd mad
+ 1648  grep -r "*match*" .
+ 1649  grep -R "match" .
+ 1650  find . -type f | xargs grep -l match
+ 1651  cd Cprograms/
+ 1652  ls
+ 1653  cd opencl/
+ 1654  ls
+ 1655  make
+ 1656  ./hello 
+ 1657  clinfo
+ 1658  ls
+ 1659  less hello.cl
+ 1660  less hello.c
+ 1661  subl hello.c
+ 1662  ./hello
+ 1663  cd ..
+ 1664  sudo ln -sf /opt/intel/opencl-1.2-3.2.1.16712/etc/intel64.icd /etc/OpenCL/vendors/nvidia.icd
+ 1665  ls
+ 1666  cd thrust/
+ 1667  ls
+ 1668  cd
+ 1669  cd cuda-workspace/
+ 1670  cd ste/src/
+ 1671  ls
+ 1672  subl ran3.cpp 
+ 1673  mkdir bact
+ 1674  cd bact
+ 1675  git clone repo.acc.bessy.de:/opt/repositories/controls/git/tools/CommissioningTools
+ 1676  git clone mertens@repo.acc.bessy.de:/opt/repositories/controls/git/tools/CommissioningTools
+ 1677  ls
+ 1678  cd CommissioningTools/
+ 1679  ls
+ 1680  cd bact
+ 1681  ls
+ 1682  python setup.py config
+ 1683  python setup.py install
+ 1684  cd ..
+ 1685  cd Ex
+ 1686  ls
+ 1687  cd examples/
+ 1688  ls
+ 1689  cd epicsSoftIoc/
+ 1690  ls
+ 1691  cat exampleSIOC.sh 
+ 1692  cd .
+ 1693  cd ..
+ 1694  ls
+ 1695  cd ..
+ 1696  ls
+ 1697  cd bact/
+ 1698  ls
+ 1699  ipython
+ 1700  ls
+ 1701  cd examples/
+ 1702  ls
+ 1703  cat example_archiver.py 
+ 1704  ipython
+ 1705  ls
+ 1706  cd ..
+ 1707  python setup.py config
+ 1708  sudo apt-get install libprotobuf-dev protobuf-compiler
+ 1709  python setup.py config
+ 1710  python setup.py build_proto
+ 1711  python setup.py build
+ 1712  python setup.py install
+ 1713  python setup.py test
+ 1714  ls
+ 1715  cd examples/
+ 1716  ls
+ 1717  python example_archiver.py 
+ 1718  pip install google
+ 1719  python example_archiver.py 
+ 1720  conda install protobuf
+ 1721  python example_archiver.py 
+ 1722  ls
+ 1723  python epics_read_test.py 
+ 1724  cat epics_read_test.py 
+ 1725  ls
+ 1726  cat life_time.py 
+ 1727  pythoh life_time.py 
+ 1728  python life_time.py 
+ 1729  ls
+ 1730  cd lifetime_plot/
+ 1731  ls
+ 1732  ll
+ 1733  python lifetime_plot.py 
+ 1734  ls
+ 1735  open bessy2_current_2016_2017.png 
+ 1736  cd ..
+ 1737  ls
+ 1738  cd epics/
+ 1739  ls
+ 1740  cat archiver_extract_data.py 
+ 1741  l
+ 1742  python archiver_extract_data.py 
+ 1743  ls
+ 1744  ll
+ 1745  ll ./example_data/
+ 1746  python archiver_week_statistics.py 
+ 1747  ls
+ 1748  kk
+ 1749  ll
+ 1750  nano archiver_extract_data.py 
+ 1751  python archiver_extract_data.py 
+ 1752  ipython
+ 1753  pip3 install pyepics
+ 1754  caget DIAGKVWB:offset
+ 1755  cd
+ 1756  cd MachineData/
+ 1757  cd 2017-12-18/
+ 1758  ls
+ 1759  grep #* CGIExport.cgi 
+ 1760  grep '#*' CGIExport.cgi 
+ 1761  grep '^\#.*' CGIExport.cgi 
+ 1762  grep '^\# Channel .*' CGIExport.cgi 
+ 1763  grep '^\# Channel .*' CGIExport.cgi | awk '{print $2}'
+ 1764  grep '^\# Channel .*' CGIExport.cgi | awk '{print $3}'
+ 1765  awk '/^\# Channel{print}'
+ 1766  awk '/^\# Channel/{print}'
+ 1767  awk '/^\# Channel/{print$0}'
+ 1768  info csplit
+ 1769  ll
+ 1770  cat CGIExport.cgi 
+ 1771  cd
+ 1772  cd bact
+ 1773  ls
+ 1774  cd CommissioningTools/
+ 1775  ls
+ 1776  cd bact/
+ 1777  ls
+ 1778  cd bact/
+ 1779  ls
+ 1780  cd ..
+ 1781  cd examples/
+ 1782  ls
+ 1783  python example_archiver.py 
+ 1784  cd
+ 1785  cd MachineData/2017-12-18/
+ 1786  ls
+ 1787  cat CGIExport.cgi 
+ 1788  cat CGIExport.cgi | tail -n 2 >> bpmx.dat
+ 1789  less bpmx.dat 
+ 1790  tail -n +3 CGIExport.cgi > bpmx.dat 
+ 1791  awk '/^\# channel/{f=substr($0,match($0,//'.*/'/))}
+ 1792  awk '/^\# channel/{f=grep \'.*\'}'
+ 1793  awk '/^\# channel/{f=grep \'.*\';next}{print > f}' CGIExport.cgi
+ 1794  awk '/^\# channel/{f="F"++i;next}{print > f;}' CGIExport.cgi
+ 1795  awk '/^\# Channel/{f=grep \'.*\';next}{print > f;}' CGIExport.cgi
+ 1796  awk '/^\# Channel/{f="F"++i;next}{print > f;}' CGIExport.cgi
+ 1797  awk '/^\# Channel/{print$0}'
+ 1798  awk '/^\# Channel/{print$0}' CGIExport.cgi 
+ 1799  awk '/^\# Channel/{x="F"++i;}{print > x;}' CGIExport.cgi
+ 1800  awk '/^\# /{x="F"++i;}{print > x;}' CGIExport.cgi
+ 1801  ls
+ 1802  lscat F1
+ 1803  cat F1
+ 1804  awk '/^\# /{x="bpmx_"++i;}{print > x;}' bpmx.dat 
+ 1805  ls
+ 1806  cat F1
+ 1807  nano bpmclean.sh
+ 1808  egrep -o "\'.*\'" F1
+ 1809  grep -o "\'.*\'" F1
+ 1810  grep  "\'.*\'" F1
+ 1811  grep  "'.*'" F1
+ 1812  grep -o  "'.*'" F1
+ 1813  grep -o  "'[^]'" F1
+ 1814  grep -o  "'[^]'*" F1
+ 1815  grep -o  "'[^']*" F1
+ 1816  grep -o  "'[^']*'" F1
+ 1817  grep -oP  "(?<=').*?(?=')" F1
+ 1818  nano bpmclean.sh
+ 1819  bash ./bpmclean.sh 
+ 1820  bash ./bpmclean.sh CGIExport.cgi 
+ 1821  nano bpmclean.sh
+ 1822  bash ./bpmclean.sh CGIExport.cgi 
+ 1823  nano bpmclean.sh
+ 1824  bash ./bpmclean.sh CGIExport.cgi 
+ 1825  grep -oP  "(?<=').*?(?=')" F1
+ 1826  echo $SHELL
+ 1827  nano bpmclean.sh
+ 1828  bash ./bpmclean.sh CGIExport.cgi 
+ 1829  ls
+ 1830  nano bpmclean.sh
+ 1831  ls
+ 1832  bash ./bpmclean.sh CGIExport.cgi 
+ 1833  ls
+ 1834  bash ./bpmclean.sh CGIExport.cgi 
+ 1835  nano bpmclean.sh
+ 1836  bash ./bpmclean.sh CGIExport.cgi 
+ 1837  ls
+ 1838  rm grep 
+ 1839  ls
+ 1840  ll
+ 1841  nano bpmclean.sh
+ 1842  bash ./bpmclean.sh CGIExport.cgi 
+ 1843  nano bpmclean.sh
+ 1844  bash ./bpmclean.sh CGIExport.cgi 
+ 1845  nano bpmclean.sh
+ 1846  bash ./bpmclean.sh CGIExport.cgi 
+ 1847  nano bpmclean.sh
+ 1848  bash ./bpmclean.sh CGIExport.cgi 
+ 1849  nano bpmclean.sh
+ 1850  bash ./bpmclean.sh CGIExportoffset.cgi 
+ 1851  nano bpmclean.sh
+ 1852  bash ./bpmclean.sh CGIExportoffset.cgi 
+ 1853  bash ./bpmclean.sh CGIExportX.cgi 
+ 1854  cd JNotebooks/
+ 1855  cd Devices/
+ 1856  ls
+ 1857  jupyter notebook
+ 1858  ssh tmertens@repo.bessy.acc.de
+ 1859  ssh mertens@repo.bessy.acc.de
+ 1860  ssh mertens@elbe.bessy.acc.de
+ 1861  ssh mertens@repo.bessy.de
+ 1862  ssh mertens@repo.bessy.acc.de
+ 1863  ssh tmertens@repo.bessy.acc.de
+ 1864  ssh tmerten@repo.bessy.acc.de
+ 1865  ssh mertens@repe.acc.bessy.de
+ 1866  ssh mertens@repo.acc.bessy.de
+ 1867  scp -r /home/tmerten/JNotebooks/ mertens@repo.acc.bessy.de:/opt/repositories/controls/git/tools/BeamPhysics.git
+ 1868  cd cuda-workspace/
+ 1869  ls
+ 1870  cd ste/
+ 1871  ls
+ 1872  cd src
+ 1873  ls
+ 1874  nvcc -ccbin clang-3.8 -lstdc++ -lm tester.cu 
+ 1875  nvcc -ccbin clang-3.8 -lstdc++ -lm tester.cu -run
+ 1876  xranr
+ 1877  xrandr
+ 1878  python
+ 1879  ls
+ 1880  cd scripts/
+ 1881  ls
+ 1882  bash mount
+ 1883  bash mount.sh 
+ 1884  cd
+ 1885  ls
+ 1886  cd scripts/
+ 1887  ls
+ 1888  cat mount
+ 1889  cat mount.sh 
+ 1890  cd
+ 1891  cd /mnt/
+ 1892  ls
+ 1893  cd net
+ 1894  cd
+ 1895  cd ~/mnt/net/group/
+ 1896  ls
+ 1897  cd bessy_electrons/
+ 1898  ls
+ 1899  cd
+ 1900  cd scripts/
+ 1901  ls
+ 1902  cat mount.sh 
+ 1903  sshfs -o idmap=user mti@nas:/nas3/group ~/mnt/net/group
+ 1904  cd ~/mnt/net/home2/
+ 1905  ls
+ 1906  cd mti
+ 1907  ls
+ 1908  cd
+ 1909  ssh mti@nas
+ 1910  python 
+ 1911  ssh mti@nas
+ 1912  python
+ 1913  cd ~/mnt/net/licensed/
+ 1914  ls
+ 1915  cd mathematica-11.2/
+ 1916  ls
+ 1917  cd Executables/
+ 1918  ls
+ 1919  mathematica
+ 1920  ./mathetmatica
+ 1921  ls
+ 1922  ./Mathematica
+ 1923  cd cuda-workspace/ste/src/
+ 1924  ls
+ 1925  nano backupelbe.sh
+ 1926  chmod 755 backupelbe.sh 
+ 1927  cd cuda-workspace/
+ 1928  ls
+ 1929  cd ste/
+ 1930  ls
+ 1931  cd
+ 1932  cd scripts/
+ 1933  ls
+ 1934  cd ..
+ 1935  cd cuda-workspace/ste/src/
+ 1936  ls
+ 1937  cd..
+ 1938  cd
+ 1939  ssh mertens@repo.acc.bessy.de
+ 1940  scp -r /home/tmerten/cuda-workspace/  mertens@repo.acc.bessy.de
+ 1941  ssh mertens@repo.acc.bessy.de
+ 1942  scp -r /home/tmerten/cuda-workspace  mertens@repo.acc.bessy.de:/
+ 1943  scp -r /home/tmerten/cuda-workspace/  mertens@repo.acc.bessy.de:/
+ 1944  ssh mertens@repo.acc.bessy.de
+ 1945  scp -r /home/tmerten/cuda-workspace/  mertens@repo.acc.bessy.de:/home/mertens
+ 1946  python
+ 1947  pythom
+ 1948  python
+ 1949  cd scripts/
+ 1950  ls
+ 1951  bash mount.sh 
+ 1952  cat mount.sh 
+ 1953  umount -f  ~/mnt/net/group
+ 1954  sudo umount -f  ~/mnt/net/group
+ 1955  bash mount.sh 
+ 1956  python
+ 1957  python
+ 1958  cd cuda-workspace/ste/src/
+ 1959  ls
+ 1960  ls *.sh
+ 1961  nano run.sh 
+ 1962  ./run.sh 
+ 1963  cd cuda-workspace/ste/src/
+ 1964  nano makefile
+ 1965  mv makefile makefile.bak
+ 1966  nano makefile
+ 1967  cd cuda-workspace/ste/src/
+ 1968  ls *.h
+ 1969  ls*.c
+ 1970  ls* .c
+ 1971  ls *.c
+ 1972  ls *.cpp
+ 1973  ls *.hpp
+ 1974  ls *.cu
+ 1975  nano makefile
+ 1976  makefile
+ 1977  make
+ 1978  nano makefile
+ 1979  make
+ 1980  nano makefile
+ 1981  make
+ 1982  cd mad
+ 1983  ls
+ 1984  cd madscripts/
+ 1985  ls
+ 1986  cd ..
+ 1987  cd 
+ 1988  cd JNotebooks/
+ 1989  ls
+ 1990  cd mad
+ 1991  ls
+ 1992  cd ..
+ 1993  python
+ 1994  cd cuda-workspace/ste/src/
+ 1995  ls
+ 1996  du
+ 1997  du -hs
+ 1998  ls
+ 1999  rm Distribution_bucket_b*
+ 2000  rm Distribution_bucket_*
+ 2001  time ./a.out 
+ 2002  ll
+ 2003  ls Distr*
+ 2004  time ./a.out 
+ 2005  nano run.sh 
+ 2006  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bun$
+ 2007  nano run.sh 
+ 2008  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu 
+ 2009  nano run.sh 
+ 2010  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu 
+ 2011  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2012  time ./a.out 
+ 2013  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2014  ./a.out 
+ 2015  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2016  time ./a.out 
+ 2017  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2018  time ./a.out 
+ 2019  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2020  time ./a.out 
+ 2021  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2022  ll STE_IBS*
+ 2023  ll STE_Emittances_*
+ 2024  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2025  time ./a.out 
+ 2026  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2027  time ./a.out 
+ 2028  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2029  time ./a.out 
+ 2030  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2031  time ./a.out 
+ 2032  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2033  time ./a.out 
+ 2034  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2035  time ./a.out 
+ 2036  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2037  time ./a.out 
+ 2038  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2039  time ./a.out 
+ 2040  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2041  vcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2042  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2043  time ./a.out 
+ 2044  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2045  time ./a.out 
+ 2046  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2047  time ./a.out 
+ 2048  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2049  time ./a.out 
+ 2050  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2051  time ./a.out 
+ 2052  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2053  time ./a.out 
+ 2054  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2055  time ./a.out 
+ 2056  2 :1.44061
+ 2057  I3 :0.330302
+ 2058  I4x :0
+ 2059  I4y :0
+ 2060  I5x :0.164302
+ 2061  I5y :0
+ 2062  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2063  time ./a.out 
+ 2064  rm Dist*
+ 2065  ll
+ 2066  time ./a.out 
+ 2067  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2068  ll STE_Em*
+ 2069  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2070  time ./a.out 
+ 2071  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2072  time ./a.out 
+ 2073  ll STE_Emittances_*_19*
+ 2074  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2075  time ./a.out 
+ 2076  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2077  vcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2078  time ./a.out 
+ 2079  vcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2080  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2081  time ./a.out 
+ 2082  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2083  time ./a.out 
+ 2084  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2085  time ./a.out 
+ 2086  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2087  time ./a.out 
+ 2088  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2089  time ./a.out 
+ 2090  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2091  time ./a.out 
+ 2092  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2093  time ./a.out 
+ 2094  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2095  time ./a.out 
+ 2096  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2097  time ./a.out 
+ 2098  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2099  time ./a.out 
+ 2100  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2101  time ./a.out 
+ 2102  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2103  cp STE.in STE.in.bak
+ 2104  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2105  cp STE_BunchFile1.in STE_BunchFile1.in.bak
+ 2106  time ./a.out 
+ 2107  nvcc -ccbin clang-3.8 -lstdc++ -lm  STE.cu STE_ReadInput_double.cpp STE_TFS_double.cu STE_Radiation_double.cu STE_Longitudinal_Hamiltonian_double.cu STE_Synchrotron_double.cu STE_ReadBunchFiles_double.cu STE_IBS_double.cu STE_Bunch_double.cu -run
+ 2108  git status
+ 2109  git init
+ 2110  git remote add origin git@gitlab.com:TMSangohan/STE.git
+ 2111  git add .
+ 2112  git commit -m "Initial commit"
+ 2113  git push -u origin master
+ 2114  rm Distribution_bucket_*.dat
+ 2115  git add .
+ 2116  git commit -m "Initial commit update"
+ 2117  git push -u origin master
+ 2118  git pull remote master -u
+ 2119  git status
+ 2120  git pull origin master -u
+ 2121  git pull origin master 
+ 2122  git commit -m "Initial commit update 2"
+ 2123  git add .gitignor
+ 2124  git add .gitignore
+ 2125  git status
+ 2126  git status --ignored
+ 2127  history
+ 2128  history > history.dat

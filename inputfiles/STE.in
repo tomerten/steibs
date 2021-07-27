@@ -1,0 +1,40 @@
+numberOfMacroParticles		20000
+seed                        12459
+timeRatio                   200.0		sets how many real machine turns when 1 sim turn performed
+numberOfTurns               800
+writeDistribution			10000
+writeTurn                   100
+methodRadiationIntegral		2		1: approx 2: lattice (using tfs) 
+methodLongitudinalDist      2	    1: bi-gauss 2: bi-gauss matched 3: manual
+dipoleBendingRadius         4.3614820689792353
+RFVoltage1					2.0e6
+RFVoltage2					0.0 20.0e6
+RFVoltage3					0.0 17.14e6
+HarmonicNumber1				400.0
+HarmonicNumber2				0.0 1200.0  if not used put equal to zero => synchronous phase calculation
+HarmonicNumber3				0.0 1400.0
+tfsFile1 					/home/tmerten/mad/2018-02-14/madin/here.tfs	
+tfsFile2					none
+bunchFile1                  STE_BunchFile1.in
+bunchFile2                  none
+particleType1				electron		electron, proton, ion
+particleType2				electron		electron, proton, ion
+particleAtomNumber1			1
+particleAtomNumber2			1
+betatronCoupling            0.02
+k2l                         0.0
+k2sl                        0.0
+radiationDamping			1
+betatron					1
+numberOfBins				10000
+methodIBS					0
+ibsCoupling					0.0
+fracibstot					1.0
+IBSupdate					1
+RFupdate					1
+RFmix						1.0
+nwrite						1
+fmohlNumPoints				1000
+coulomblog					20.0
+blowupx						0.0
+blowupy						0.28
