@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "steibs"
+name = "ste"
 version = "0.0.0"
 description = "<Enter a one-sentence description of this project here.>"
 authors = ["Tom Mertens <your.email@whatev.er>"]
@@ -13,7 +13,7 @@ homepage = "https://github.com/tomerten/steibs"
 keywords = ['packaging', 'poetry']
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.4.2"

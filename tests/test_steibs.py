@@ -2,21 +2,14 @@
 
 """Tests for steibs package."""
 
-import steibs
+import ste
+import STELib as stelib
 
 
-def test_hello_noargs():
-    """Test for steibs.hello()."""
-    s = steibs.hello()
-    assert s=="Hello world"
+def test_ste_random_ran3():
+    assert (0.684440382 - stelib.ran3(1234)) < 1e-4
 
 
-def test_hello_me():
-    """Test for steibs.hello('me')."""
-    s = steibs.hello('me')
-    assert s=="Hello me"
-    
-    
 # ==============================================================================
 # The code below is for debugging a particular test in eclipse/pydev.
 # (otherwise all tests are normally run with pytest)
@@ -24,10 +17,10 @@ def test_hello_me():
 # that the source directory is on the path
 # ==============================================================================
 if __name__ == "__main__":
-    the_test_you_want_to_debug = test_hello_noargs
+    the_test_you_want_to_debug = test_ste_random_ran3()
 
     print("__main__ running", the_test_you_want_to_debug)
     the_test_you_want_to_debug()
-    print('-*# finished #*-')
-    
+    print("-*# finished #*-")
+
 # eof

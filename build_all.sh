@@ -9,3 +9,8 @@ cd ..
 cd tests/build
 cmake ..
 make
+cd ../../../build
+cmake ..
+make
+make install 
+cd ..
