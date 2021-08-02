@@ -14,9 +14,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/../bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/../bin)
 
 find_library(STELIB_LIB STELib HINTS /usr/local/lib/)
+find_library(IBSLIB_LIB IBSLib HINTS /usr/local/lib/)
 
 add_executable(test_random src/test_ste_random.cpp)
 add_executable(test_output src/test_ste_output.cpp)
+add_executable(test_longit src/test_ste_longitudinal.cpp)
 
-target_link_libraries(test_random PUBLIC ${STELIB_LIB})
-target_link_libraries(test_output PUBLIC ${STELIB_LIB})
+# add_library(IBSLib  SHARED src/test_ste_longitudinal.cpp)
+target_link_libraries(test_random PUBLIC ${STELIB_LIB} )
+target_link_libraries(test_output PUBLIC ${STELIB_LIB} )
+target_link_libraries(test_longit PUBLIC ${IBSLIB_LIB} )

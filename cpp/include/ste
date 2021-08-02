@@ -3,5 +3,6 @@
 
 #include "ste_bits/Output.hpp"
 #include "ste_bits/Random.hpp"
+#include "ste_bits/Longitudinal.hpp"
 
 #endif

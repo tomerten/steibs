@@ -23,8 +23,10 @@ set(PROJECT_INCLUDE_DIR "include/ste_bits")
 set(SOURCE_FILES
 ${PROJECT_INCLUDE_DIR}/Random.hpp
 ${PROJECT_INCLUDE_DIR}/Output.hpp
+${PROJECT_INCLUDE_DIR}/Longitudinal.hpp
 ${PROJECT_SOURCE_DIR}/Random.cpp
 ${PROJECT_SOURCE_DIR}/Output.cpp
+${PROJECT_SOURCE_DIR}/Longitudinal.cpp
 )
 
 # Set up such that XCode organizes the files correctly
@@ -32,7 +34,14 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES})
 
 # Add Library
 find_library(CL CL HINTS /usr/include)
+#find_library(IBSLIB_LIB IBSlib  HINTS /usr/local/include)
+find_library(IBSLIB_LIB IBSLib HINTS /usr/local/lib/)
+
+message(STATUS "${IBSLIB_LIB}")
+
 add_library(${PROJECT_NAME}  SHARED ${SOURCE_FILES})
+#add_library(IBSLib  SHARED ${SOURCE_FILES})
+target_link_libraries(${PROJECT_NAME} PUBLIC ${IBSLIB_LIB} )
 
 # Include directories
 target_include_directories(${PROJECT_NAME} PRIVATE include/)

@@ -74,7 +74,9 @@ endif()
 # adding pybind11
 # git submodule add https://github.com/pybind/pybind11.git third_party/pybind11-2.5.0
 SET(MY_PYBIND ${CMAKE_CURRENT_SOURCE_DIR}/third_party/pybind11-2.7.0)
+SET(MY_IBSLIB ${CMAKE_CURRENT_SOURCE_DIR}/third_party/ibslib)
 add_subdirectory(${MY_PYBIND})
+add_subdirectory(${MY_IBSLIB})
 
 # include source directories
 include_directories("${CMAKE_SOURCE_DIR}/cpp/include/ste_bits")
