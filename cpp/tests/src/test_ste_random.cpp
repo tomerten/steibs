@@ -10,6 +10,14 @@ bool test_single_ran3(int seed) {
   return false;
 }
 
+bool test_single_bigaussian4D(double betax, double ex, double betay, double ey,
+                              int seed) {
+  std::vector<double> testVector;
+  testVector = ste_random::BiGaussian4D(betax, ex, betay, ey, seed);
+  ste_output::printVector(testVector);
+  return false;
+}
+
 int main() {
   // set seed
   int seed = 123456;
@@ -26,5 +34,8 @@ int main() {
   }
   ste_output::reset();
 
+  // test single bigaussian4d
+  test_single_bigaussian4D(1.0, 1.0e-9, 2.0, 1.0e-10, seed);
+  test_single_bigaussian4D(1.0, 1.0e-9, 2.0, 1.0e-10, seed);
   return 0;
 }
