@@ -12,4 +12,5 @@ PYBIND11_MODULE(STELib, m) {
   /*
    */
   m.def("ran3", &ste_random::ran3, "");
+  m.def("BiGaussian4D", &ste_random::BiGaussian4D, "");
 }

@@ -1,3 +1,6 @@
 [submodule "third_party/pybind11-2.7.0"]
 	path = third_party/pybind11-2.7.0
 	url = https://github.com/pybind/pybind11.git
+[submodule "third_party/ibslib"]
+	path = third_party/ibslib
+	url = https://github.com/tomerten/IBS.git

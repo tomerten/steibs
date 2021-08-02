@@ -14,3 +14,4 @@ cmake ..
 make
 make install 
 cd ..
+# poetry install
