@@ -141,8 +141,9 @@ Returns:
 ================================================================================
 */
 double pcoeff(std::map<std::string, double> &twissheaderL, double voltage) {
+  // factro 1.0e9 -> pc is in GeV
   return twissheaderL["omega"] * voltage * twissheaderL["CHARGE"] /
-         (2.0 * pi * twissheaderL["PC"] * twissheaderL["betar"]);
+         (2.0 * pi * twissheaderL["PC"] * 1.0e9 * twissheaderL["betar"]);
 }
 
 /*
