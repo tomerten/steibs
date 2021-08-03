@@ -102,7 +102,7 @@ ${PYTHON_FILES}
 )
 
 
-target_link_libraries(${PROJECT_NAME}  PUBLIC)
+target_link_libraries(${PROJECT_NAME}  PUBLIC ${MY_IBSLIB})
 
 if(NOT _site_packages )
     set(_site_packages  ${PYTHON_LIBRARY_DIR})

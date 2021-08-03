@@ -18,7 +18,8 @@ double pcoeff(std::map<std::string, double> &twissheaderL, double voltage);
 
 double Hamiltonian(std::map<std::string, double> &twissheaderL,
                    std::vector<double> &harmonicNumbers,
-                   std::vector<double> &rfVoltages, double tcoeff, double t);
+                   std::vector<double> &rfVoltages, double tcoeff, double t,
+                   double delta);
 
 } // namespace ste_longitudinal
 #endif

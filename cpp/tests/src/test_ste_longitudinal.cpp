@@ -51,9 +51,10 @@ bool test_hamiltonian(map<string, double> &twissheadermap,
                       std::vector<double> &rfVoltages) {
   double tc = 2.297095009748885e+06;
   double t = 0.0;
+  double delta = twissheadermap["delta"];
 
   double value = ste_longitudinal::Hamiltonian(twissheadermap, harmonicNumbers,
-                                               rfVoltages, tc, t);
+                                               rfVoltages, tc, t, delta);
   /* uncomment to debug
   std::printf("%24.16e\n", value);
   */

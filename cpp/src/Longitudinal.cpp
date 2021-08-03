@@ -67,6 +67,19 @@ void updateTwissHeaderLong(std::map<std::string, double> &twissheader,
       twissheader["phis"], charge, harmonicNumbers.size(), harmonicArr,
       voltagesArr);
 
+  /* tauhat is time in seconds for max time deviation in longitudinal bucket
+   *
+   * Example BII:
+   * ------------
+   * 240.0839/clight/h0 = 2.0020842218785904e-09
+   * with no energy loss tauhat would be this number divided by 2
+   * but radiation makes the hamiltonian asymmetric
+   * slightly shrinking the stable bucket to 1.000692e-09
+   */
+  twissheader["tauhat"] =
+      abs(twissheader["phis"] - (twissheader["phis"] - 180.0)) / 180.0 * pi /
+      (harmonicNumbers[0] * twissheader["omega"]);
+
   // synchrotron tune
   twissheader["qs"] = SynchrotronTune(
       twissheader["omega"], twissheader["U0"], charge, harmonicNumbers.size(),
@@ -91,6 +104,7 @@ HISTORY:
 
 REF:
     - based on original CTE code (CERN) - but updated for multi-RF systems
+    - Lee (Third Ed.) page 233 eq. 3.13 (kinetic part of Hamiltonian)
 ================================================================================
 Arguments:
 ----------
@@ -126,6 +140,10 @@ HISTORY:
 
 REF:
     - based on original CTE code (CERN) - but updated for multi-RF systems
+    - PCOEFF is the coefficient in front of the goniometric functions
+      (potential) in the Hamiltonian
+    - Lee (Third Ed.) page 233 eq. 3.13
+
 ================================================================================
 Arguments:
 ----------
@@ -160,6 +178,15 @@ HISTORY:
 
 REF:
     - based on original CTE code (CERN) - but updated for multi-RF systems
+    - Lee (Third Ed.) page 233 eq. 3.13
+
+
+HAMILTONIAN:
+
+H = 0.5 * tcoeff * delta**2 +
+SUM_i(pcoeff[v_i,omega0,p0,betarelativistic](cos(h_i omega0 t)- cos(h_i/h_0
+phis) + (h_i omega0 t- h_i/h_0 phis) sin(h_i/h_0 phis)))
+
 ================================================================================
 Arguments:
 ----------
@@ -167,22 +194,30 @@ Arguments:
         twissheader map updated with longitudinal parameters
         ( ref: updateTwissHeaderLong )
     - std::vector<double> &harmonicNumbers
+        RF harmonic numbers - Assuming main harmonic number is first in the list
+    - std::vector<double> &rfvoltages
+        RF voltages
+    - double tcoeff
+        see tcoeff
+    - double t
+        time point to calculate Hamiltonian (converted to phase internally)
 
 Returns:
 --------
-    - double pcoeff
+    - double Hamiltonian value
 
 ================================================================================
 ================================================================================
 */
 double Hamiltonian(std::map<std::string, double> &twissheaderL,
                    std::vector<double> &harmonicNumbers,
-                   std::vector<double> &rfVoltages, double tcoeff, double t) {
+                   std::vector<double> &rfVoltages, double tcoeff, double t,
+                   double delta) {
   double kinetic, potential;
 
   // kinetic contribution
   // We assume initial bunch length is given
-  kinetic = 0.5 * tcoeff * twissheaderL["delta"] * twissheaderL["delta"];
+  kinetic = 0.5 * tcoeff * delta * delta;
 
   std::vector<double> pcoeffs, hRatios, hRatiosInv, phases;
 
@@ -195,15 +230,18 @@ double Hamiltonian(std::map<std::string, double> &twissheaderL,
   }
 
   // calc the potential
-  potential = pcoeffs[0] *
-              (cos(phases[0]) - cos(twissheaderL["phis"]) +
-               (phases[0] - twissheaderL["phis"]) * sin(twissheaderL["phis"]));
+  potential =
+      pcoeffs[0] * (cos(phases[0]) - cos(twissheaderL["phis"] / 180.0 * pi) +
+                    (phases[0] - twissheaderL["phis"] / 180.0 * pi) *
+                        sin(twissheaderL["phis"] / 180.0 * pi));
 
   for (int i = 1; i < harmonicNumbers.size(); i++) {
-    potential += pcoeffs[i] * hRatios[i] *
-                 (cos(phases[i]) - cos(hRatiosInv[i] * twissheaderL["phis"]) +
-                  (phases[i] - hRatiosInv[i] * twissheaderL["phis"]) *
-                      sin(hRatiosInv[i] * twissheaderL["phis"]));
+    potential +=
+        pcoeffs[i] * hRatios[i] *
+        (cos(phases[i]) -
+         cos(hRatiosInv[i] * twissheaderL["phis"] / 180.0 * pi) +
+         (phases[i] - hRatiosInv[i] * twissheaderL["phis"] / 180.0 * pi) *
+             sin(hRatiosInv[i] * twissheaderL["phis"] / 180.0 * pi));
   }
 
   return kinetic + potential;

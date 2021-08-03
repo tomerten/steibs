@@ -1,5 +1,7 @@
 #include "../include/ste_bits/Random.hpp"
 // #include <CL/cl.h>
+#include "../include/ste_bits/Longitudinal.hpp"
+#include <ibs>
 #include <iostream>
 #include <math.h>
 #include <vector>
@@ -120,6 +122,54 @@ std::vector<double> BiGaussian4D(const double betax, const double ex,
   out.push_back(px);
   out.push_back(y);
   out.push_back(py);
+
+  return out;
+}
+
+std::vector<double> BiGaussian6D(double betax, double ex, double betay,
+                                 double ey,
+                                 std::vector<double> &harmonicNumbers,
+                                 std::vector<double> &rfVoltages,
+                                 std::map<std::string, double> &twissheadermapL,
+                                 int seed) {
+  double h0 = harmonicNumbers[0];
+  double tauhat = twissheadermapL["tauhat"];
+  double omega = twissheadermapL["omega"];
+  double ampt = twissheadermapL["sigs"] / clight;
+  double ts = twissheadermapL["phis"] / 180.0 * pi / (h0 * omega);
+  std::vector<double> out;
+  out = BiGaussian4D(betax, ex, betay, ey, seed);
+
+  // adding two zeros
+  out.push_back(0.0);
+  out.push_back(0.0);
+
+  // longitudinal matching
+  double r1, r2, amp, facc, tc, pc, ham;
+  tc = (omega * twissheadermapL["eta"] * h0);
+  pc = (omega * twissheadermapL["CHARGE"]) /
+       (2.0 * pi * twissheadermapL["PC"] * 1.0e9 * twissheadermapL["betar"]);
+
+  double delta = 0.0; // sync particle
+  double hammax = ste_longitudinal::Hamiltonian(
+      twissheadermapL, harmonicNumbers, rfVoltages, tc, tauhat, delta);
+
+  do {
+    r1 = 2 * ran3(&seed) - 1;
+    r2 = 2 * ran3(&seed) - 1;
+    amp = r1 * r1 + r2 * r2;
+    if (amp >= 1)
+      continue;
+
+    facc = sqrt(-2 * log(amp) / amp);
+    out[4] = ts + ampt * r1 * facc;
+    if (abs(out[5] - ts) >= tauhat)
+      continue;
+
+    out[5] = twissheadermapL["sige"] * r2 * facc;
+    ham = ste_longitudinal::Hamiltonian(twissheadermapL, harmonicNumbers,
+                                        rfVoltages, tc, out[4], out[5]);
+  } while ((amp >= 1) || (ham > hammax) || (abs(out[4] - ts) >= tauhat));
 
   return out;
 }
