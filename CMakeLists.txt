@@ -101,8 +101,12 @@ ${HEADER_FILES}
 ${PYTHON_FILES}
 )
 
+# include dir
+include_directories(/usr/local/include)
+find_library(IBSLIB_LIB IBSLib HINTS /usr/local/lib/)
+message(STATUS "IBSLIB = ${IBSLIB_LIB}")
 
-target_link_libraries(${PROJECT_NAME}  PUBLIC ${MY_IBSLIB})
+target_link_libraries(${PROJECT_NAME}  PUBLIC ${IBSLIB_LIB})
 
 if(NOT _site_packages )
     set(_site_packages  ${PYTHON_LIBRARY_DIR})
