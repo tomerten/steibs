@@ -14,6 +14,19 @@ PYBIND11_MODULE(STELib, m) {
    */
   m.def("ran3", &ste_random::ran3, "");
   m.def("BiGaussian4D", &ste_random::BiGaussian4D, "");
-  m.def("BiGaussian6D", &ste_random::BiGaussian4D, "");
-  m.def("updateTwissHeaderLong", &ste_longitudinal::updateTwissHeaderLong, "");
+  m.def("BiGaussian6D", &ste_random::BiGaussian6D, "");
+  m.def("BiGaussian6DLongMatched", &ste_random::BiGaussian6DLongMatched, "");
+  m.def("GenerateDistribution", &ste_random::GenerateDistribution, "");
+  m.def("GenerateDistributionMatched", &ste_random::GenerateDistributionMatched,
+        "");
+  m.def("Hamiltonian", &ste_longitudinal::Hamiltonian, "");
+  m.def("updateTwissHeaderLong",
+        [](std::map<std::string, double> twissheader,
+           std::vector<double> harmonicNumbers, std::vector<double> rfVoltages,
+           double aatom, double sigs) {
+          ste_longitudinal::updateTwissHeaderLong(twissheader, harmonicNumbers,
+                                                  rfVoltages, aatom, sigs);
+          return twissheader;
+        },
+        "");
 }

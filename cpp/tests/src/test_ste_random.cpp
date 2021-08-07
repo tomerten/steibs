@@ -108,6 +108,9 @@ int main() {
     std::printf("Failed\n");
   }
   ste_output::reset();
+
+  ste_output::printVector(ste_random::BiGaussian6D(1.0, 1.0e-9, 2.0, 1.0e-10, h,
+                                                   v, twissheadermap, seed));
   // test single bigaussian4d
   // test_single_bigaussian4D(1.0, 1.0e-9, 2.0, 1.0e-10, seed);
   // test_single_bigaussian4D(1.0, 1.0e-9, 2.0, 1.0e-10, seed);

@@ -18,6 +18,21 @@ std::vector<double> BiGaussian6D(double betax, double ex, double betay,
                                  std::map<std::string, double> &twissheadermapL,
                                  int seed);
 
+std::vector<double> BiGaussian6DLongMatched(
+    double betax, double ex, double betay, double ey,
+    std::vector<double> &harmonicNumbers, std::vector<double> &rfVoltages,
+    std::map<std::string, double> &twissheadermapL, int seed);
+
+std::vector<std::vector<double>>
+GenerateDistribution(int nMacro, double betax, double ex, double betay,
+                     double ey, std::vector<double> &harmonicNumbers,
+                     std::vector<double> &rfVoltages,
+                     std::map<std::string, double> &twissheadermapL, int seed);
+
+std::vector<std::vector<double>> GenerateDistributionMatched(
+    int nMacro, double betax, double ex, double betay, double ey,
+    std::vector<double> &harmonicNumbers, std::vector<double> &rfVoltages,
+    std::map<std::string, double> &twissheadermapL, int seed);
 } // namespace ste_random
 
 #endif

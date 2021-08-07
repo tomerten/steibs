@@ -142,7 +142,7 @@ int main() {
   double h0 = 400.0;
   double h1 = 400; // 1200.0;
   double h2 = 400; // 1400.0;
-  double v0 = 1.5e6;
+  double v0 = -1.5e6;
   double v1 = 0.0; // 20.0e6;
   double v2 = 0.0; // 17.14e6;
   double omega0 = (2 * pi) / trev;
