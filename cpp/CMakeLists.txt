@@ -24,9 +24,13 @@ set(SOURCE_FILES
 ${PROJECT_INCLUDE_DIR}/Random.hpp
 ${PROJECT_INCLUDE_DIR}/Output.hpp
 ${PROJECT_INCLUDE_DIR}/Longitudinal.hpp
+${PROJECT_INCLUDE_DIR}/Global.hpp
+${PROJECT_INCLUDE_DIR}/Radiation.hpp
 ${PROJECT_SOURCE_DIR}/Random.cpp
 ${PROJECT_SOURCE_DIR}/Output.cpp
 ${PROJECT_SOURCE_DIR}/Longitudinal.cpp
+${PROJECT_SOURCE_DIR}/Global.cpp
+${PROJECT_SOURCE_DIR}/Radiation.cpp
 )
 
 # Set up such that XCode organizes the files correctly

@@ -20,6 +20,9 @@ double Hamiltonian(std::map<std::string, double> &twissheaderL,
                    std::vector<double> &harmonicNumbers,
                    std::vector<double> &rfVoltages, double tcoeff, double t,
                    double delta);
+void RfUpdate(std::vector<std::vector<double>> &distribution, double fmix,
+              std::map<std::string, double> &tw, std::vector<double> &hs,
+              std::vector<double> &v);
 
 } // namespace ste_longitudinal
 #endif

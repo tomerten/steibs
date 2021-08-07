@@ -30,14 +30,21 @@ for _ in range(2**11):
 #test4 = np.array(test4)
 test6m = np.array(test6)
 
-n = 2**11
-#test6m = np.array(stelib.GenerateDistribution(n,betxavg,ex,betyavg,ey,h,v,twheader,seed))
+n = 2**0
+twheader['phis'] = twheader['phis'] +360.0
+test6m = np.array(stelib.GenerateDistribution(n,betxavg,ex,betyavg,ey,h,v,twheader,seed))
 #test6m = np.array(stelib.GenerateDistributionMatched(n,betxavg,ex,betyavg,ey,h,v,twheader,seed))
 
 import ste
 
-ste.distributionplot(test6m)
+#ste.distributionplot(test6m)
 
+twheader["timeratio"] = 2000
+twheader["aatom"] = ibslib.electron_mass / ibslib.proton_mass
+equi = stelib.radiationEquilib(twheader)
+print(twheader)
+print(equi)
+stelib.RadUpdate(test6m, twheader, equi, seed)
 #fig, axs = plt.subplots(2,2,figsize=(15,15))
 
 #axs[0,0].scatter(test6[:,4],test6[:,5],s=1)

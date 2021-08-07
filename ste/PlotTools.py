@@ -109,3 +109,71 @@ def distributionplot(arr):
     axc2.legend(handles, labels, scatterpoints=1, loc="center", fontsize=12)
 
     plt.show()
+
+
+def createMovie(twheader, h, v, turndict):
+    import matplotlib
+    import numpy as np
+    import STELib as slib
+
+    matplotlib.use("Agg")
+    import matplotlib.animation as manimation
+    import matplotlib.pyplot as plt
+
+    tc = twheader["omega"] * twheader["eta"] * h[0]
+    phis = twheader["phis"]
+
+    @np.vectorize
+    def H(t, delta):
+        return slib.Hamiltonian(twheader, h, v, tc, t, delta)
+
+    FFMpegWriter = manimation.writers["ffmpeg"]
+    metadata = dict(title="Movie Test", artist="Matplotlib", comment="Movie support!")
+    writer = FFMpegWriter(fps=15, metadata=metadata)
+    # with plt.style.context(['seaborn-poster','dark_background']):
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+
+    # intialize two line objects (one in each axes)
+    (line11,) = ax1.plot([], [], ".")
+    (line12,) = ax1.plot([], [], ".")
+    (line21,) = ax2.plot([], [], ".")
+    (line22,) = ax2.plot([], [], ".", alpha=0.2)
+    line = [line11, line12, line21, line22]
+
+    # fig = plt.figure()
+    # l, = plt.plot([], [], '.')
+
+    xi = np.linspace(
+        (phis - 1.25 * np.pi) / (400 * 2 * np.pi * 1.25e6),
+        (phis + 1.25 * np.pi) / (400 * 2 * np.pi * 1.25e6),
+        200,
+    )
+    yi = np.linspace(-0.05, 0.05, 200)
+    Theta, Theta_dot = np.meshgrid(xi, yi)
+    H2 = H(Theta * (400 * 2 * np.pi * 1.25e6), Theta_dot)
+    z = H2(xi, yi)
+    ax1.set_xlim(-1.5e-9, 1.5e-9)
+    ax1.set_ylim(-0.04, 0.04)
+    rect = ax1.contour(xi, yi, H2, 15)
+    ax2.set_xlim(-0.001, 0.001)
+    ax2.set_ylim(-0.001, 0.001)
+    ax1.grid()
+    ax2.grid()
+
+    x0, y0 = 0, 0
+    filelimit = 10
+    with writer.saving(fig, "ibs.mp4", 400):
+        for i in range(0, filelimit, 1):
+            x0 = turndict[i][4]
+            y0 = turndict[i][5]
+            rect
+            #         line[0].set_data(x0, y0)
+            #         line[0].set_markersize(2.5)
+            line[0].set_data(dfs2[i][4] - 2e-9, dfs2[i][5])
+            line[0].set_markersize(2.5)
+            #         line[2].set_data(dfs1[i][0], dfs1[i][2])
+            #         line[2].set_markersize(2)
+            line[2].set_data(dfs2[i][0], dfs2[i][2])
+            line[2].set_markersize(2)
+            writer.grab_frame()

@@ -4,5 +4,7 @@
 #include "ste_bits/Output.hpp"
 #include "ste_bits/Random.hpp"
 #include "ste_bits/Longitudinal.hpp"
+#include "ste_bits/Global.hpp"
+#include "ste_bits/Radiation.hpp"
 
 #endif

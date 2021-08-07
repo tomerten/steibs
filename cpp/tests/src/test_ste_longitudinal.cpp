@@ -67,6 +67,8 @@ bool test_hamiltonian(map<string, double> &twissheadermap,
 }
 
 int main() {
+  // set seed
+  int seed = 123456;
   string twissfilename = "../src/b2_design_lattice_1996.twiss";
   map<string, double> twissheadermap;
   twissheadermap = GetTwissHeader(twissfilename);
@@ -131,5 +133,26 @@ int main() {
     std::printf("Failed\n");
   }
   ste_output::reset();
+
+  int nMacro = 2;
+  double betx = twissheadermap["LENGTH"] / (twissheadermap["Q1"] * 2.0 * pi);
+  double bety = twissheadermap["LENGTH"] / (twissheadermap["Q2"] * 2.0 * pi);
+  double coupling = 0.05;
+  double ex = 5e-9;
+  double ey = coupling * ex;
+
+  std::vector<std::vector<double>> distribution =
+      ste_random::GenerateDistributionMatched(nMacro, betx, ex, bety, ey, h, v,
+                                              twissheadermap, seed);
+
+  ste_output::printVector(distribution[0]);
+  ste_longitudinal::RfUpdate(distribution, 1.0, twissheadermap, h, v);
+  ste_output::printVector(distribution[0]);
+
+  /*
+   std::transform(
+       distribution.begin(), distribution.end(), distribution.begin(),
+       ste_longitudinal::RfUpdateRoutineFunctor(1.0, twissheadermap, h, v));
+       */
   return 0;
 }

@@ -138,7 +138,10 @@ std::vector<double> BiGaussian6D(double betax, double ex, double betay,
   double omega = twissheadermapL["omega"];
   double ampt = twissheadermapL["sigs"] / clight;
   double ts = twissheadermapL["phis"] / 180.0 * pi / (h0 * omega);
-  double ts2 = (180.0 - twissheadermapL["phis"]) / 180.0 * pi / (h0 * omega);
+  int npi = int(twissheadermapL["phis"]) / 360;
+  double tperiod = 2 * pi / (h0 * omega);
+  double ts2 = (180.0 - twissheadermapL["phis"]) / 180.0 * pi / (h0 * omega) +
+               double(npi) * tperiod;
 
   /*
   std::printf("%-20s %16.8e\n", "h0", h0);
@@ -219,7 +222,10 @@ std::vector<double> BiGaussian6DLongMatched(
   // is, with the sign convention used, left of the ham contour
   // at 180-phis (The Ham rises lin to the right.)
   double ts = twissheadermapL["phis"] / 180.0 * pi / (h0 * omega);
-  double ts2 = (180.0 - twissheadermapL["phis"]) / 180.0 * pi / (h0 * omega);
+  int npi = int(twissheadermapL["phis"]) / 360;
+  double tperiod = 2 * pi / (h0 * omega);
+  double ts2 = (180.0 - twissheadermapL["phis"]) / 180.0 * pi / (h0 * omega) +
+               double(npi) * tperiod;
   double delta = twissheadermapL["sige"];
 
   std::vector<double> out;

@@ -1,5 +1,7 @@
+#include <algorithm>
 #include <ibs>
 #include <map>
+#include <numeric>
 #include <string>
 #include <vector>
 
@@ -245,6 +247,61 @@ double Hamiltonian(std::map<std::string, double> &twissheaderL,
   }
 
   return kinetic + potential;
+}
+
+double STEEffectiveRFVoltageInElectronVolt(double phi, double charge,
+                                           std::vector<double> &harmon,
+                                           std::vector<double> voltages) {
+  // init
+  double vrf = voltages[0] * sin(phi / 180.0 * pi);
+
+  // add the rest taking harmonic numbers into account
+  for (int i = 1; i < harmon.size(); i++) {
+    vrf += voltages[i] * sin((harmon[i] / harmon[0]) * phi / 180.0 * pi);
+  }
+
+  // multiply with charge
+  vrf *= charge;
+
+  return vrf;
+}
+
+void RfUpdate(std::vector<std::vector<double>> &distribution, double fmix,
+              std::map<std::string, double> &tw, std::vector<double> &hs,
+              std::vector<double> &vs) {
+  std::for_each(
+      distribution.begin(), distribution.end(),
+      [&tw, &hs, &fmix, &vs](std::vector<double> &particle) {
+        double charge = tw["CHARGE"];
+        double phis = tw["phis"];
+        double gamma = tw["GAMMA"];
+        double p0 = tw["PC"] * 1.0e9;
+        double betar = BetaRelativisticFromGamma(gamma);
+
+        double omega = tw["omega"];
+        double h0 = hs[0];
+        double tc = tcoeff(tw, h0);
+
+        // Lee Third edition page 233 eqs 3.6 3.16 3.13
+        // the phase  = h0 omega0 t
+        double phi = h0 * omega * particle[4];
+        double voltdiff =
+            STEEffectiveRFVoltageInElectronVolt(phi, charge, hs, vs) / charge;
+        voltdiff -=
+            STEEffectiveRFVoltageInElectronVolt(phis, charge, hs, vs) / charge;
+        double pc = pcoeff(tw, voltdiff);
+
+        /*result.push_back(particle[0]);
+        result.push_back(particle[1]);
+        result.push_back(particle[2]);
+        result.push_back(particle[3]);
+        result.push_back(particle[4] +
+                         mix * 2.0 * pi * tw["eta"] * particle[5] / omega);
+        result.push_back(particle[5] +
+                         mix * voltdiff * charge / (2.0 * pi * betar * p0));*/
+        particle[4] += fmix * 2.0 * pi * tw["eta"] * particle[5] / omega;
+        particle[5] += fmix * voltdiff * charge / (2.0 * pi * betar * p0);
+      });
 }
 
 } // namespace ste_longitudinal

@@ -20,6 +20,9 @@ PYBIND11_MODULE(STELib, m) {
   m.def("GenerateDistributionMatched", &ste_random::GenerateDistributionMatched,
         "");
   m.def("Hamiltonian", &ste_longitudinal::Hamiltonian, "");
+  m.def("CalculateEmittance", &ste_global::CalculateEmittance, "");
+  m.def("radiationEquilib", &ste_radiation::radiationEquilib, "");
+  m.def("RadUpdate", &ste_radiation::RadUpdate, "");
   m.def("updateTwissHeaderLong",
         [](std::map<std::string, double> twissheader,
            std::vector<double> harmonicNumbers, std::vector<double> rfVoltages,
