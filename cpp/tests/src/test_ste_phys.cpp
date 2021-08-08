@@ -60,5 +60,7 @@ int main() {
   std::printf("%-30s %16.8e\n", "K2L", K2L);
   std::printf("%-30s %16.8e\n", "K2SL", K2SL);
 
+  ste_global::betatronUpdate(distribution, twissheadermap, 0.05, K2L, K2SL);
+  ste_output::printVector(distribution[0]);
   return 0;
 }

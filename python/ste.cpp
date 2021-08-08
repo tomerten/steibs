@@ -22,6 +22,15 @@ PYBIND11_MODULE(STELib, m) {
   m.def("Hamiltonian", &ste_longitudinal::Hamiltonian, "");
   m.def("CalculateEmittance", &ste_global::CalculateEmittance, "");
   m.def("radiationEquilib", &ste_radiation::radiationEquilib, "");
+  m.def("betatronUpdate",
+        [](std::vector<std::vector<double>> &distribution,
+           std::map<std::string, double> twissheader, double coupling,
+           double K2L, double K2SL) {
+          ste_global::betatronUpdate(distribution, twissheader, coupling, K2L,
+                                     K2SL);
+          return distribution;
+        },
+        "");
   m.def("RadUpdate", &ste_radiation::RadUpdate, "");
   m.def("updateTwissHeaderLong",
         [](std::map<std::string, double> twissheader,

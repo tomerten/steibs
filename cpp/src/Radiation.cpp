@@ -126,21 +126,21 @@ void RadUpdate(std::vector<std::vector<double>> &distribution,
       }*/
         double trev = tw["trev"];
         double timeratio = tw["timeratio"];
-        std::printf("test %16.6e\n", radparam["taus"]);
+        // std::printf("test %16.6e\n", radparam["taus"]);
         // timeratio is real machine turns over per simulation turn
         double coeffdecaylong = 1.0 - ((trev / radparam["taus"]) * timeratio);
         double coeffexcitelong = radparam["sigsinf"] / clight * sqrt(3.0) *
                                  sqrt(1.0 - coeffdecaylong * coeffdecaylong);
-        std::printf("%-30s %24.16e\n", "taus", radparam["taus"]);
-        std::printf("%-30s %24.16e\n", "coefdecaylong ", coeffdecaylong);
-        std::printf("%-30s %24.16e\n", "coefexcitelong ", coeffexcitelong);
+        // std::printf("%-30s %24.16e\n", "taus", radparam["taus"]);
+        // std::printf("%-30s %24.16e\n", "coefdecaylong ", coeffdecaylong);
+        // std::printf("%-30s %24.16e\n", "coefexcitelong ", coeffexcitelong);
 
         // the damping time is for EMITTANCE, therefore need to multiply by 2
         double coeffdecayx =
             1.0 - ((trev / (2.0 * radparam["taux"])) * timeratio);
         double coeffdecayy =
             1.0 - ((trev / (2.0 * radparam["tauy"])) * timeratio);
-        std::printf("%-30s %24.16e\n", "coeffdecayx ", coeffdecayx);
+        // std::printf("%-30s %24.16e\n", "coeffdecayx ", coeffdecayx);
 
         // exact     coeffgrow= sigperp*sqrt(3.)*sqrt(1-coeffdecay**2)
         // but trev << tradperp so
@@ -150,10 +150,10 @@ void RadUpdate(std::vector<std::vector<double>> &distribution,
             radparam["eyinf"] * sqrt(3.) * sqrt(1.0 - pow(coeffdecayy, 2));
 
         if (!((radparam["taux"] < 0.0) || (radparam["tauy"] < 0.0))) {
-          std::printf("init %24.16e\n", particle[0]);
+          // std::printf("init %24.16e\n", particle[0]);
           particle[0] = coeffdecayx * particle[0] +
                         coeffgrowx * (2.0 * ste_random::ran3(&seed) - 1.0);
-          std::printf("init %24.16e\n", particle[0]);
+          // std::printf("init %24.16e\n", particle[0]);
           particle[1] = coeffdecayx * particle[1] +
                         coeffgrowx * (2.0 * ste_random::ran3(&seed) - 1.0);
           particle[2] = coeffdecayy * particle[2] +
