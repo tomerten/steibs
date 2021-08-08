@@ -1,4 +1,5 @@
 #include <ibs>
+#include <numeric>
 #include <ste>
 
 int main() {
@@ -7,6 +8,8 @@ int main() {
   string twissfilename = "../src/b2_design_lattice_1996.twiss";
   map<string, double> twissheadermap;
   twissheadermap = GetTwissHeader(twissfilename);
+  std::map<std::string, std::vector<double>> twiss =
+      GetTwissTableAsMap(twissfilename);
 
   // rf settings
   std::vector<double> h, v;
@@ -49,5 +52,13 @@ int main() {
   ste_output::printVector(distribution[0]);
   ste_radiation::RadUpdate(distribution, twissheadermap, equi, seed);
   ste_output::printVector(distribution[0]);
+
+  double K2L = std::accumulate(twiss["K2L"].begin(), twiss["K2L"].end(), 0.0);
+  double K2SL =
+      std::accumulate(twiss["K2SL"].begin(), twiss["K2SL"].end(), 0.0);
+
+  std::printf("%-30s %16.8e\n", "K2L", K2L);
+  std::printf("%-30s %16.8e\n", "K2SL", K2SL);
+
   return 0;
 }

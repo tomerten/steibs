@@ -111,7 +111,7 @@ def distributionplot(arr):
     plt.show()
 
 
-def createMovie(twheader, h, v, turndict):
+def createMovie(twheader, h, v, turndict, filename):
     import matplotlib
     import numpy as np
     import STELib as slib
@@ -135,11 +135,9 @@ def createMovie(twheader, h, v, turndict):
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
 
     # intialize two line objects (one in each axes)
-    (line11,) = ax1.plot([], [], ".")
-    (line12,) = ax1.plot([], [], ".")
-    (line21,) = ax2.plot([], [], ".")
-    (line22,) = ax2.plot([], [], ".", alpha=0.2)
-    line = [line11, line12, line21, line22]
+    (line1,) = ax1.plot([], [], ".")
+    (line2,) = ax2.plot([], [], ".")
+    line = [line1, line2]
 
     # fig = plt.figure()
     # l, = plt.plot([], [], '.')
@@ -162,18 +160,17 @@ def createMovie(twheader, h, v, turndict):
     ax2.grid()
 
     x0, y0 = 0, 0
-    filelimit = 10
-    with writer.saving(fig, "ibs.mp4", 400):
-        for i in range(0, filelimit, 1):
+    with writer.saving(fig, "filename", 400):
+        for i in range(0, 10, 1):
             x0 = turndict[i][4]
             y0 = turndict[i][5]
             rect
             #         line[0].set_data(x0, y0)
             #         line[0].set_markersize(2.5)
-            line[0].set_data(dfs2[i][4] - 2e-9, dfs2[i][5])
+            line[0].set_data(x0, y0)
             line[0].set_markersize(2.5)
             #         line[2].set_data(dfs1[i][0], dfs1[i][2])
             #         line[2].set_markersize(2)
-            line[2].set_data(dfs2[i][0], dfs2[i][2])
-            line[2].set_markersize(2)
+            line[1].set_data(turndict[i][0], turndict[i][1])
+            line[1].set_markersize(2)
             writer.grab_frame()
